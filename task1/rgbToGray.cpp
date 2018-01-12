@@ -57,7 +57,7 @@ int main(){
 	std::vector<Point> points;
 	Point testPoint(-240,-340);
 	Point testPointTwo(-500,-1000);
-	points.push_back(testPoint);
+	//points.push_back(testPoint);
 	points.push_back(testPointTwo);
 	//cout << "hei" << std::endl;
 	HOGDescriptor desc(Size(64,128), Size(16,8), Size(8,8), Size(8,8),9);	

@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/task1/hog_visualization.cpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/hog_visualization.cpp
 
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/task1/rgbToGray.cpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/rgbToGray.cpp
 opencv2/core/core.hpp
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/task1/opencv2/core/core.hpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/opencv2/core/core.hpp
 opencv2/highgui/highgui.hpp
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/task1/opencv2/highgui/highgui.hpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/task1/opencv2/imgproc/imgproc.hpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/opencv2/imgproc/imgproc.hpp
 opencv2/objdetect/objdetect.hpp
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/task1/opencv2/objdetect/objdetect.hpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/opencv2/objdetect/objdetect.hpp
 hog_visualization.cpp
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/task1/hog_visualization.cpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/hog_visualization.cpp
 iostream
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/task1/iostream
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/iostream
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h
