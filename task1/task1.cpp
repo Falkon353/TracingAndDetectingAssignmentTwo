@@ -2,7 +2,7 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/objdetect/objdetect.hpp"
-#include "hog_visualization.cpp"
+#include "../hog_visualization.cpp"
 #include "iostream"
 
 
