@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named rgbToGray
+# Target rules for targets named task1
 
 # Build rule for target.
-rgbToGray: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rgbToGray
-.PHONY : rgbToGray
+task1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 task1
+.PHONY : task1
 
 # fast build rule for target.
-rgbToGray/fast:
-	$(MAKE) -f CMakeFiles/rgbToGray.dir/build.make CMakeFiles/rgbToGray.dir/build
-.PHONY : rgbToGray/fast
+task1/fast:
+	$(MAKE) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/build
+.PHONY : task1/fast
 
-rgbToGray.o: rgbToGray.cpp.o
+task1.o: task1.cpp.o
 
-.PHONY : rgbToGray.o
+.PHONY : task1.o
 
 # target to build an object file
-rgbToGray.cpp.o:
-	$(MAKE) -f CMakeFiles/rgbToGray.dir/build.make CMakeFiles/rgbToGray.dir/rgbToGray.cpp.o
-.PHONY : rgbToGray.cpp.o
+task1.cpp.o:
+	$(MAKE) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/task1.cpp.o
+.PHONY : task1.cpp.o
 
-rgbToGray.i: rgbToGray.cpp.i
+task1.i: task1.cpp.i
 
-.PHONY : rgbToGray.i
+.PHONY : task1.i
 
 # target to preprocess a source file
-rgbToGray.cpp.i:
-	$(MAKE) -f CMakeFiles/rgbToGray.dir/build.make CMakeFiles/rgbToGray.dir/rgbToGray.cpp.i
-.PHONY : rgbToGray.cpp.i
+task1.cpp.i:
+	$(MAKE) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/task1.cpp.i
+.PHONY : task1.cpp.i
 
-rgbToGray.s: rgbToGray.cpp.s
+task1.s: task1.cpp.s
 
-.PHONY : rgbToGray.s
+.PHONY : task1.s
 
 # target to generate assembly for a file
-rgbToGray.cpp.s:
-	$(MAKE) -f CMakeFiles/rgbToGray.dir/build.make CMakeFiles/rgbToGray.dir/rgbToGray.cpp.s
-.PHONY : rgbToGray.cpp.s
+task1.cpp.s:
+	$(MAKE) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/task1.cpp.s
+.PHONY : task1.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... rgbToGray"
-	@echo "... rgbToGray.o"
-	@echo "... rgbToGray.i"
-	@echo "... rgbToGray.s"
+	@echo "... task1"
+	@echo "... task1.o"
+	@echo "... task1.i"
+	@echo "... task1.s"
 .PHONY : help
 
 

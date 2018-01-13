@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/Tracing
 CMAKE_BINARY_DIR = /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1
 
 #=============================================================================
-# Target rules for target CMakeFiles/rgbToGray.dir
+# Target rules for target CMakeFiles/task1.dir
 
 # All Build rule for target.
-CMakeFiles/rgbToGray.dir/all:
-	$(MAKE) -f CMakeFiles/rgbToGray.dir/build.make CMakeFiles/rgbToGray.dir/depend
-	$(MAKE) -f CMakeFiles/rgbToGray.dir/build.make CMakeFiles/rgbToGray.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/CMakeFiles --progress-num=1,2 "Built target rgbToGray"
-.PHONY : CMakeFiles/rgbToGray.dir/all
+CMakeFiles/task1.dir/all:
+	$(MAKE) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/depend
+	$(MAKE) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/CMakeFiles --progress-num=1,2 "Built target task1"
+.PHONY : CMakeFiles/task1.dir/all
 
 # Include target in all.
-all: CMakeFiles/rgbToGray.dir/all
+all: CMakeFiles/task1.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/rgbToGray.dir/rule: cmake_check_build_system
+CMakeFiles/task1.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/rgbToGray.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/task1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task1/CMakeFiles 0
-.PHONY : CMakeFiles/rgbToGray.dir/rule
+.PHONY : CMakeFiles/task1.dir/rule
 
 # Convenience name for target.
-rgbToGray: CMakeFiles/rgbToGray.dir/rule
+task1: CMakeFiles/task1.dir/rule
 
-.PHONY : rgbToGray
-
-# clean rule for target.
-CMakeFiles/rgbToGray.dir/clean:
-	$(MAKE) -f CMakeFiles/rgbToGray.dir/build.make CMakeFiles/rgbToGray.dir/clean
-.PHONY : CMakeFiles/rgbToGray.dir/clean
+.PHONY : task1
 
 # clean rule for target.
-clean: CMakeFiles/rgbToGray.dir/clean
+CMakeFiles/task1.dir/clean:
+	$(MAKE) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/clean
+.PHONY : CMakeFiles/task1.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/task1.dir/clean
 
 .PHONY : clean
 
