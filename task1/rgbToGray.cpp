@@ -55,12 +55,12 @@ int main(){
 
 	std::vector<float> descriptors;
 	std::vector<Point> points;
-	Point testPoint(-240,-340);
-	Point testPointTwo(-500,-1000);
-	//points.push_back(testPoint);
-	points.push_back(testPointTwo);
-	//cout << "hei" << std::endl;
-	HOGDescriptor desc(Size(64,128), Size(16,8), Size(8,8), Size(8,8),9);	
+	cout << "widht: " << image.size().width << std::endl;
+	cout << "height: " << image.size().height << std::endl;
+	resize(image, image, Size(124,96));
+	cout << "widht: " << image.size().width << std::endl;
+	cout << "height: " << image.size().height << std::endl;
+	HOGDescriptor desc(Size(64,48), Size(16,8), Size(8,8), Size(8,8),9);	
 	desc.compute(image,descriptors, Size(64,128),Size(8,8),points);
 	visualizeHOG(image,descriptors,desc,5);
 
