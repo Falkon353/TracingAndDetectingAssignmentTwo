@@ -27,9 +27,10 @@ int main(){
 		return -1;
 	}
 	resize(image2, image2, Size(128,96));
+
 	//creat tree
 	Ptr<ml::DTrees> dec_trees = ml::DTrees::create();
-	dec_trees->setMaxDepth(1);
+	dec_trees->setMaxDepth(10);
 	dec_trees->setMinSampleCount(2);
 	dec_trees->setRegressionAccuracy(0.01f);
 	dec_trees->setUseSurrogates(false);
@@ -42,16 +43,20 @@ int main(){
 	//Train tree.
 	std::vector<float> descriptorImage1;
 	std::vector<float> descriptorImage2;
-	std::vector<std::vector<float> > descriptorsImage;
 	HOGDescriptor hog(Size(image1.size().width,image1.size().height), Size(16,12), Size(8,6), Size(16,12),9);
 	hog.compute(image1,descriptorImage1);
-	hog.compute(image2,descriptorImage2);
-	descriptorsImage.push_back(descriptorImage1);
-	descriptorsImage.push_back(descriptorImage2);
-	cout << descriptorsImage.size() << std::endl;
-	std::vector<float> responses;
-	dec_trees -> train(descriptorsImage,ml::COL_SAMPLE,noArray());
-	//cout << binarTree -> getMaxDepth() << std::endl;	
-
+	hog.compute(image2,descriptorImage2);	
+	Mat feats, labels;
+	Mat mDescriptorImage1 = Mat(1, descriptorImage1.size(), CV_32FC1);
+	memcpy(mDescriptorImage1.data, descriptorImage1.data(), descriptorImage1.size());
+	Mat mDescriptorImage2 = Mat(1, descriptorImage2.size(), CV_32FC1);
+	memcpy(mDescriptorImage2.data, descriptorImage2.data(), descriptorImage2.size()); 
+	feats.push_back(mDescriptorImage1);
+	feats.push_back(mDescriptorImage2);
+	labels.push_back(-1);
+	labels.push_back(1);
+	cout << "Depth: " << dec_trees -> getMaxDepth() << std::endl;
+	dec_trees -> train(ml::TrainData::create(feats,ml::ROW_SAMPLE, labels));
+	cout << "Depth: " << dec_trees -> getMaxDepth() << std::endl;
 	return 0;
 }
