@@ -9,50 +9,45 @@
 
 using namespace std;
 
-void listFile();
+void reqursivelyFindJPG(string baseDir, std::vector<string>& picturs);
 
 
 int main(){
-    listFile();
+    std::vector<string> picturs;
+    string baseDir = "task2Data/train/";
+    reqursivelyFindJPG(baseDir, picturs);
+    for(string& picture: picturs){
+       cout << "Picture: " << picture << std::endl;
+    }
     return 0;
 }
-void listFile(){
+//A function that reqursively shershes a directory for a file with .jpg in tha name. 
+//Every file it finds it stores in a vector the path to the file include the baseDir path
+void reqursivelyFindJPG(string baseDir, std::vector<string>& picturs){
         DIR *pDIR;
         struct dirent *entry;
         std::vector<string> dirs;
-        std::vector<string> picturs;
         dirs.push_back("");
-        string baseDir = "task2Data/train/";
-        //for (string& addon: dirs){
         cout << "Size before loop: " << dirs.size() << std::endl;
-        for(int i = 0; i <= dirs.size(); i++){
-            cout << "Size in loop: " << dirs.size() << std::endl;
-            const char* directory = baseDir.append(dirs[i]).c_str();
+        for(int i = 0; i < dirs.size(); i++){
+            string strDirectory = baseDir+dirs[i];
+            const char* directory = strDirectory.c_str();
             if( pDIR=opendir(directory)){
                     while(entry = readdir(pDIR)){
-                            //cout << "Hello World!" << std::endl;
-                            if( strcmp(entry->d_name, ".") != 0 && strcmp(entry->d_name, "..") != 0 ){
-                                //std::cout << entry->d_name << std::endl;
-                                //picturs.push_back(entry->d_name);    
-                                if (((string)entry->d_name).string::find_first_of(".")!=string::npos){
-                                    //cout << "was a file" << std::endl;
+                            cout << "Entry: " << entry->d_name << std::endl;
+                            if( strcmp(entry->d_name, ".") != 0 && strcmp(entry->d_name, "..") != 0 ){   
+                                if (((string)entry->d_name).string::find(".jpg")!=string::npos){
                                     picturs.push_back(baseDir+dirs[i]+entry->d_name);
                                 }
-                                else{
-                                    //cout << "was a folder" << std::endl;
+                                else if (((string)entry->d_name).string::find_first_of(".")==string::npos){
                                     dirs.push_back(dirs[i]+entry->d_name+"/");
                                 }
                             }
-
                     }
                     closedir(pDIR);
             }
-        }
-        //cout << "Second dir: " << dirs[1] << std::endl;
-        for(string& picture: picturs){
-            cout << "Picture: " << picture << std::endl;
-        }
-        for(string& dir: dirs){
-            cout << "Dir: " << dir << std::endl;
-        }
+        } 
+        //for(string& dir: dirs){
+        //    cout << "Dir: " << dir << std::endl;
+        //}
 }
