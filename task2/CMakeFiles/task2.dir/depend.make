@@ -3,6 +3,7 @@
 
 CMakeFiles/task2.dir/task2.cpp.o: /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/hog_visualization.cpp
 CMakeFiles/task2.dir/task2.cpp.o: task2.cpp
+CMakeFiles/task2.dir/task2.cpp.o: testOpenFiles.cpp
 CMakeFiles/task2.dir/task2.cpp.o: /usr/local/include/opencv/cxcore.h
 CMakeFiles/task2.dir/task2.cpp.o: /usr/local/include/opencv2/calib3d.hpp
 CMakeFiles/task2.dir/task2.cpp.o: /usr/local/include/opencv2/calib3d/calib3d_c.h
