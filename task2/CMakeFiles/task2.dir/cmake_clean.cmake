@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/task2.dir/task2.cpp.o"
+  "CMakeFiles/task2.dir/randomForest.cpp.o"
   "task2.pdb"
   "task2"
 )

@@ -123,6 +123,33 @@ task2/fast:
 	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/build
 .PHONY : task2/fast
 
+randomForest.o: randomForest.cpp.o
+
+.PHONY : randomForest.o
+
+# target to build an object file
+randomForest.cpp.o:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/randomForest.cpp.o
+.PHONY : randomForest.cpp.o
+
+randomForest.i: randomForest.cpp.i
+
+.PHONY : randomForest.i
+
+# target to preprocess a source file
+randomForest.cpp.i:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/randomForest.cpp.i
+.PHONY : randomForest.cpp.i
+
+randomForest.s: randomForest.cpp.s
+
+.PHONY : randomForest.s
+
+# target to generate assembly for a file
+randomForest.cpp.s:
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/randomForest.cpp.s
+.PHONY : randomForest.cpp.s
+
 task2.o: task2.cpp.o
 
 .PHONY : task2.o
@@ -159,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... task2"
+	@echo "... randomForest.o"
+	@echo "... randomForest.i"
+	@echo "... randomForest.s"
 	@echo "... task2.o"
 	@echo "... task2.i"
 	@echo "... task2.s"

@@ -6,6 +6,7 @@
 #include "../hog_visualization.cpp"
 #include "testOpenFiles.cpp"
 #include "iostream"
+#include "randomForest.hpp"
 
 
 
@@ -62,7 +63,7 @@ using namespace std;
 	return 0;
 }*/
 
-int main(){
+/*int main(){
 	std::vector< vector<string> > pathToPictures;
     string baseDir = "task2Data/train/";
     reqursivelyFindJPG(baseDir, pathToPictures);
@@ -73,14 +74,14 @@ int main(){
         	cout << "Picture: " << picturPath << std::endl;
       	}
 	}*/
-	cout << pathToPictures.size() << std::endl;
+/*	cout << pathToPictures.size() << std::endl;
     Mat features, labels;
     createTrainingData(features,labels,pathToPictures);
     cout << "features size" << features.size() << std::endl;
     cout << "labels size" << labels.size() << std::endl;
     //creat tree
 	Ptr<ml::DTrees> dec_trees = ml::DTrees::create();
-	dec_trees->setMaxDepth(10);
+	dec_trees->setMaxDepth(20);
 	dec_trees->setMinSampleCount(2);
 	dec_trees->setRegressionAccuracy(0.01f);
 	dec_trees->setUseSurrogates(false);
@@ -102,7 +103,7 @@ int main(){
         	cout << "Picture: " << picturPath << std::endl;
       	}
 	}*/
-	dTreePredict(hog,dec_trees,pathToTestPictures,answers);
+/*	dTreePredict(hog,dec_trees,pathToTestPictures,answers);
 	for(vector<int>& folderAnswer: answers){
 		cout << "New folder" << std::endl;
       	for(int& answer: folderAnswer){
@@ -110,4 +111,13 @@ int main(){
       	}
 	}
     return 0;
+}*/
+
+
+int main()
+{
+	RandomForest randForest;
+	randForest.creat(10,1,6,10,2);
+	cout << "size: " << randForest.getNrTrees() << std::endl; 
+	return 0;
 }

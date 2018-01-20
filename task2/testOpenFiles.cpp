@@ -51,8 +51,8 @@ void reqursivelyFindJPG(string baseDir, std::vector< vector <string> >& pathToPi
                 while(entry = readdir(pDIR)){
                         if( strcmp(entry->d_name, ".") != 0 && strcmp(entry->d_name, "..") != 0 ){   
                             if (((string)entry->d_name).string::find(".jpg")!=string::npos){
-                                
                                 pictursInDir.push_back(baseDir+dirs[i]+entry->d_name);
+                                //cout << "Picture Path: " << baseDir+dirs[i]+entry->d_name << std::endl;
                             }
                             else if (((string)entry->d_name).string::find_first_of(".")==string::npos){
                                 dirs.push_back(dirs[i]+entry->d_name+"/");
