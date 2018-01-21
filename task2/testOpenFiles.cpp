@@ -70,7 +70,7 @@ void reqursivelyFindJPG(string baseDir, std::vector< vector <string> >& pathToPi
         }
 }
 
-int createTrainingData(Mat& features, Mat& labels, std::vector< vector<string> > pathToPictures){
+int createTrainingData(Mat& features, Mat& labels, std::vector< vector<string> > pathToPictures, std::vector<int>& vecLabels){
     int classCounter = 1;
     HOGDescriptor hog(Size(128,96), Size(16,12), Size(8,6), Size(16,12),9);
     for(vector<string>& paths: pathToPictures){
@@ -90,6 +90,7 @@ int createTrainingData(Mat& features, Mat& labels, std::vector< vector<string> >
             features.push_back(mDescriptorPicture);
             labels.push_back(classCounter);
         }
+        vecLabels.push_back({classCounter});
         classCounter++;
     }
     return 0;

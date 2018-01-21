@@ -117,7 +117,31 @@ using namespace std;
 int main()
 {
 	RandomForest randForest;
-	randForest.creat(10,1,6,10,2);
-	cout << "size: " << randForest.getNrTrees() << std::endl; 
+	randForest.creat(50,1,6,10,2);
+	cout << "size: " << randForest.getNrTrees() << std::endl;
+	std::vector< vector<string> > pathToPictures;
+    string baseDir = "task2Data/train/";
+    reqursivelyFindJPG(baseDir, pathToPictures);
+	Mat features, labels;
+	std::vector<int> vecLabels;
+    createTrainingData(features,labels,pathToPictures,vecLabels);
+    randForest.train(features,labels,vecLabels);
+    cout << "vecLabels size: " << vecLabels.size() << std::endl;
+    cout << "vecLabels element 0: " << vecLabels[0] << std::endl;
+    Mat picture;
+    picture = imread("task2Data/test/00/0049.jpg",CV_LOAD_IMAGE_COLOR);
+    if(!picture.data){
+        cout << "Could not open or find the image" << std::endl;
+        return -1;
+    }
+    resize(picture, picture, Size(128,96));
+    std::vector<float> descriptorPicture;
+    HOGDescriptor hog(Size(128,96), Size(16,12), Size(8,6), Size(16,12),9);
+    hog.compute(picture,descriptorPicture);
+    Mat mDescriptorPicture = Mat(1, descriptorPicture.size(), CV_32FC1);
+    memcpy(mDescriptorPicture.data, descriptorPicture.data(), descriptorPicture.size());
+    std::vector<int> answers;
+    randForest.predict(mDescriptorPicture,vecLabels,answers);
+    cout << "Answer: " << answers[0] << std::endl; //"Prosent: " << answers[1] << std::endl;
 	return 0;
 }
