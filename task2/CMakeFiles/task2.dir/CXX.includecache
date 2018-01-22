@@ -31,6 +31,8 @@ opencv2/objdetect/objdetect.hpp
 /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/opencv2/objdetect/objdetect.hpp
 opencv2/ml/ml.hpp
 /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/opencv2/ml/ml.hpp
+utilities.hpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/utilities.hpp
 
 /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/task2.cpp
 opencv2/core/core.hpp
@@ -45,14 +47,18 @@ opencv2/ml/ml.hpp
 /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/opencv2/ml/ml.hpp
 ../hog_visualization.cpp
 /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/hog_visualization.cpp
-testOpenFiles.cpp
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/testOpenFiles.cpp
+utilities.hpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/utilities.hpp
 iostream
 /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/iostream
 randomForest.hpp
 /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/randomForest.hpp
 
-/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/testOpenFiles.cpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/utilities.cpp
+utilities.hpp
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/utilities.hpp
+
+/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/utilities.hpp
 stdio.h
 -
 cstdlib

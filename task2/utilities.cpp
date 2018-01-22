@@ -1,23 +1,4 @@
-#include <stdio.h>
-#include <cstdlib>
-#include "iostream"
-#include <vector>
-#include <string.h>
-#include <fstream>
-#include <dirent.h>
-#include <string.h>
-#include "opencv2/core/core.hpp"
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/objdetect/objdetect.hpp"
-#include "opencv2/ml/ml.hpp"
-
-using namespace std;
-using namespace cv;
-
-void reqursivelyFindJPG(string baseDir, std::vector< vector <string> >& pathToPictures);
-int createTrainingData(Mat& features, Mat& labels, std::vector< vector<string> > pathToPictures);
-int dTreePredict(HOGDescriptor& hog, ml::DTrees& dTree, std::vector<vector <string> > pathToPictures, std::vector<vector <int> >& answer);
+#include "utilities.hpp"
 
 
 /*int main(){
@@ -100,22 +81,27 @@ int dTreePredict(HOGDescriptor& hog, ml::DTrees* dTree, std::vector<vector <stri
     for(vector<string>& paths: pathToPictures){
         std::vector<int> folderAnswers;
         for(string& picturePath: paths){ 
-            Mat picture;
-            picture = imread(picturePath,CV_LOAD_IMAGE_COLOR);
-            if(!picture.data){
-                cout << "Could not open or find the image" << std::endl;
-                return -1;
-            }
-            resize(picture, picture, Size(128,96));
-            std::vector<float> descriptorPicture;
-            hog.compute(picture,descriptorPicture);
-            Mat mDescriptorPicture = Mat(1, descriptorPicture.size(), CV_32FC1);
-            memcpy(mDescriptorPicture.data, descriptorPicture.data(), descriptorPicture.size());
+            Mat mDescriptorPicture;
+            creatPicturDecriptor(mDescriptorPicture,hog,picturePath);
             int answer = dTree -> predict(mDescriptorPicture);
             folderAnswers.push_back(answer);
         }
         answers.push_back(folderAnswers);
     }
     return 0;
+}
 
+int creatPicturDecriptor(Mat& mDescriptorPicture, HOGDescriptor& hog, string picturePath){
+    Mat picture;
+    picture = imread(picturePath,CV_LOAD_IMAGE_COLOR);
+    if(!picture.data){
+        cout << "Could not open or find the image" << std::endl;
+        return -1;
+    }
+    resize(picture, picture, Size(128,96));
+    std::vector<float> descriptorPicture;
+    hog.compute(picture,descriptorPicture);
+    mDescriptorPicture = Mat(1, descriptorPicture.size(), CV_32FC1);
+    memcpy(mDescriptorPicture.data, descriptorPicture.data(), descriptorPicture.size());
+    return 0;
 }

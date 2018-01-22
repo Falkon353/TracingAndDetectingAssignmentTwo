@@ -4,7 +4,7 @@
 #include "opencv2/objdetect/objdetect.hpp"
 #include "opencv2/ml/ml.hpp"
 #include "../hog_visualization.cpp"
-#include "testOpenFiles.cpp"
+#include "utilities.hpp"
 #include "iostream"
 #include "randomForest.hpp"
 
@@ -76,7 +76,8 @@ using namespace std;
 	}*/
 /*	cout << pathToPictures.size() << std::endl;
     Mat features, labels;
-    createTrainingData(features,labels,pathToPictures);
+    std::vector<int> vecLabels;
+    createTrainingData(features,labels,pathToPictures,vecLabels);
     cout << "features size" << features.size() << std::endl;
     cout << "labels size" << labels.size() << std::endl;
     //creat tree
@@ -113,9 +114,7 @@ using namespace std;
     return 0;
 }*/
 
-
-int main()
-{
+int main(){
 	RandomForest randForest;
 	randForest.creat(50,1,6,10,2);
 	cout << "size: " << randForest.getNrTrees() << std::endl;
@@ -128,20 +127,37 @@ int main()
     randForest.train(features,labels,vecLabels);
     cout << "vecLabels size: " << vecLabels.size() << std::endl;
     cout << "vecLabels element 0: " << vecLabels[0] << std::endl;
-    Mat picture;
-    picture = imread("task2Data/test/00/0049.jpg",CV_LOAD_IMAGE_COLOR);
+    Mat mDescriptorPicture;
+    /*picture = imread("task2Data/test/00/0049.jpg",CV_LOAD_IMAGE_COLOR);
     if(!picture.data){
         cout << "Could not open or find the image" << std::endl;
         return -1;
     }
-    resize(picture, picture, Size(128,96));
-    std::vector<float> descriptorPicture;
+    resize(picture, picture, Size(128,96));*/
+    //std::vector<float> descriptorPicture;
+    string picturePath = "task2Data/test";
     HOGDescriptor hog(Size(128,96), Size(16,12), Size(8,6), Size(16,12),9);
-    hog.compute(picture,descriptorPicture);
+    /*hog.compute(picture,descriptorPicture);
     Mat mDescriptorPicture = Mat(1, descriptorPicture.size(), CV_32FC1);
-    memcpy(mDescriptorPicture.data, descriptorPicture.data(), descriptorPicture.size());
-    std::vector<int> answers;
-    randForest.predict(mDescriptorPicture,vecLabels,answers);
-    cout << "Answer: " << answers[0] << std::endl; //"Prosent: " << answers[1] << std::endl;
+    memcpy(mDescriptorPicture.data, descriptorPicture.data(), descriptorPicture.size());*/
+    creatPicturDecriptor(mDescriptorPicture,hog,picturePath);
+    std::vector<std::vector<pair<int, int> > > answers;
+    randForest.predictFromPath(hog,picturePath,vecLabels,answers);
+    //randForest.predict(mDescriptorPicture,vecLabels,answers);
+    for(std::vector<pair<int, int> > folder: answers){
+    	cout << "NewFolder: " << std::endl;
+    	for (pair<int, int> answer: folder){
+    		cout << "Answer: " << answer.first << " Prosent: " << answer.second << std::endl;
+    	}
+    }
 	return 0;
 }
+
+/*int main(){
+	Mat mDescriptorPicture;
+	string picturePath = "task2Data/train/00/0000.jpg";
+	HOGDescriptor hog(Size(128,96), Size(16,12), Size(8,6), Size(16,12),9);
+	int temp = creatPicturDecriptor(mDescriptorPicture,hog,picturePath);
+	cout << "mDescriptorPicture size: " << mDescriptorPicture.size << std::endl;
+	return 0;
+}*/
