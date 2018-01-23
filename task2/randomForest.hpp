@@ -24,7 +24,7 @@ public:
 	void creat(int nrTrees, int CVFoolds, int maxCategories, int maxDepth, int minSampelCount);
 	void train(Mat features, Mat label, std::vector<int> vecLabels);
 	void predict(Mat descriptorPicture, std::vector<int> vecLabels, pair<int, int>& answers);
-	void predictFromPath(HOGDescriptor& hog, string picturePath, std::vector<int> vecLabels, std::vector<std::vector<pair<int, int> > >& answer);
+	void predictFromPath(HOGDescriptor& hog, string baseDir, std::vector<int> vecLabels, std::vector<std::vector<pair<int, int> > >& answers);
 	int getNrTrees(); 
 	
 };
