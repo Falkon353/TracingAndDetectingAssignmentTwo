@@ -38,7 +38,7 @@ int main(){
 	randForest.creat(100,1,6,10,2);
     randForest.train(features,labels,vecLabels);
     //Use DTree to predict.
-    HOGDescriptor hog(Size(PICTURE_COL,PICTURE_ROW), Size(BLOCK_COL,BLOCK_ROW), Size(BLOCK_STRID_COL,BLOCK_STRID_ROW), Size(CELL_COL,CELL_ROW),9);
+    HOGDescriptor hog(Size(HOG_WINDOW_COL,HOG_WINDOW_ROW), Size(BLOCK_COL,BLOCK_ROW), Size(BLOCK_STRID_COL,BLOCK_STRID_ROW), Size(CELL_COL,CELL_ROW),9);
     string baseDirTest = "task2Data/test/";
     std::vector<vector <string> > pathToPicturesTest;
     reqursivelyFindJPG(baseDirTest,pathToPicturesTest);
