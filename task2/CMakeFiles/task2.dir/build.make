@@ -81,66 +81,66 @@ CMakeFiles/task2.dir/task2.cpp.o.provides: CMakeFiles/task2.dir/task2.cpp.o.requ
 CMakeFiles/task2.dir/task2.cpp.o.provides.build: CMakeFiles/task2.dir/task2.cpp.o
 
 
-CMakeFiles/task2.dir/randomForest.cpp.o: CMakeFiles/task2.dir/flags.make
-CMakeFiles/task2.dir/randomForest.cpp.o: randomForest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/task2.dir/randomForest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task2.dir/randomForest.cpp.o -c /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/randomForest.cpp
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o: CMakeFiles/task2.dir/flags.make
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o: /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o -c /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp
 
-CMakeFiles/task2.dir/randomForest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task2.dir/randomForest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/randomForest.cpp > CMakeFiles/task2.dir/randomForest.cpp.i
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp > CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.i
 
-CMakeFiles/task2.dir/randomForest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task2.dir/randomForest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/randomForest.cpp -o CMakeFiles/task2.dir/randomForest.cpp.s
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp -o CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.s
 
-CMakeFiles/task2.dir/randomForest.cpp.o.requires:
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o.requires:
 
-.PHONY : CMakeFiles/task2.dir/randomForest.cpp.o.requires
+.PHONY : CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o.requires
 
-CMakeFiles/task2.dir/randomForest.cpp.o.provides: CMakeFiles/task2.dir/randomForest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/randomForest.cpp.o.provides.build
-.PHONY : CMakeFiles/task2.dir/randomForest.cpp.o.provides
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o.provides: CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o.provides.build
+.PHONY : CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o.provides
 
-CMakeFiles/task2.dir/randomForest.cpp.o.provides.build: CMakeFiles/task2.dir/randomForest.cpp.o
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o.provides.build: CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o
 
 
-CMakeFiles/task2.dir/utilities.cpp.o: CMakeFiles/task2.dir/flags.make
-CMakeFiles/task2.dir/utilities.cpp.o: utilities.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/task2.dir/utilities.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task2.dir/utilities.cpp.o -c /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/utilities.cpp
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o: CMakeFiles/task2.dir/flags.make
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o: /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o -c /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp
 
-CMakeFiles/task2.dir/utilities.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task2.dir/utilities.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/utilities.cpp > CMakeFiles/task2.dir/utilities.cpp.i
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp > CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.i
 
-CMakeFiles/task2.dir/utilities.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task2.dir/utilities.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/task2/utilities.cpp -o CMakeFiles/task2.dir/utilities.cpp.s
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp -o CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.s
 
-CMakeFiles/task2.dir/utilities.cpp.o.requires:
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o.requires:
 
-.PHONY : CMakeFiles/task2.dir/utilities.cpp.o.requires
+.PHONY : CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o.requires
 
-CMakeFiles/task2.dir/utilities.cpp.o.provides: CMakeFiles/task2.dir/utilities.cpp.o.requires
-	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/utilities.cpp.o.provides.build
-.PHONY : CMakeFiles/task2.dir/utilities.cpp.o.provides
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o.provides: CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o.requires
+	$(MAKE) -f CMakeFiles/task2.dir/build.make CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o.provides.build
+.PHONY : CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o.provides
 
-CMakeFiles/task2.dir/utilities.cpp.o.provides.build: CMakeFiles/task2.dir/utilities.cpp.o
+CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o.provides.build: CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o
 
 
 # Object files for target task2
 task2_OBJECTS = \
 "CMakeFiles/task2.dir/task2.cpp.o" \
-"CMakeFiles/task2.dir/randomForest.cpp.o" \
-"CMakeFiles/task2.dir/utilities.cpp.o"
+"CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o" \
+"CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o"
 
 # External object files for target task2
 task2_EXTERNAL_OBJECTS =
 
 task2: CMakeFiles/task2.dir/task2.cpp.o
-task2: CMakeFiles/task2.dir/randomForest.cpp.o
-task2: CMakeFiles/task2.dir/utilities.cpp.o
+task2: CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o
+task2: CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o
 task2: CMakeFiles/task2.dir/build.make
 task2: /usr/local/lib/libopencv_stitching.so.3.3.1
 task2: /usr/local/lib/libopencv_superres.so.3.3.1
@@ -196,8 +196,8 @@ CMakeFiles/task2.dir/build: task2
 .PHONY : CMakeFiles/task2.dir/build
 
 CMakeFiles/task2.dir/requires: CMakeFiles/task2.dir/task2.cpp.o.requires
-CMakeFiles/task2.dir/requires: CMakeFiles/task2.dir/randomForest.cpp.o.requires
-CMakeFiles/task2.dir/requires: CMakeFiles/task2.dir/utilities.cpp.o.requires
+CMakeFiles/task2.dir/requires: CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/randomForest.cpp.o.requires
+CMakeFiles/task2.dir/requires: CMakeFiles/task2.dir/home/martin/Dokumenter/TUM/TrackAndDeteckt/Exircise2/TracingAndDetectionAssignmentTwo/src/utilities.cpp.o.requires
 
 .PHONY : CMakeFiles/task2.dir/requires
 
