@@ -65,7 +65,9 @@ int createTrainingData(Mat& features, Mat& labels, std::vector< vector<string> >
                 features.push_back(mDescriptorPicture);
                 labels.push_back(classCounter);
             }
-        }
+            /*cout << "picturePath: " << picturePath << std::endl;
+            cout << "classCounter: " << classCounter << std::endl;
+*/        }
 
         vecLabels.push_back({classCounter});
         classCounter++;
@@ -92,6 +94,7 @@ int dTreePredict(HOGDescriptor& hog, ml::DTrees* dTree, std::vector<vector <stri
 }
 
 int creatPicturDecriptor(vector<Mat>& vectorDescriptorsPicture, HOGDescriptor& hog, string picturePath){
+    srand (time(NULL));
     Mat picture;
     picture = imread(picturePath,CV_LOAD_IMAGE_COLOR);
     if(!picture.data){
@@ -99,15 +102,21 @@ int creatPicturDecriptor(vector<Mat>& vectorDescriptorsPicture, HOGDescriptor& h
         return -1;
     }
     //resize(picture, picture, Size(PICTURE_COL,PICTURE_ROW));
-    for(int j = 0; j < 3; j++){
+    int randPositionRow;
+    int randPositionCol;
+    for(int j = 0; j < 5; j++){
+        randPositionRow = rand() % (picture.rows-16);
+        randPositionCol = rand() % (picture.cols-16);
+        //cout << "randPosition: " << randPosition << std::endl;
         Mat patch;
-        if(j == 0){
+        patch = picture(Range(randPositionRow,randPositionRow+16),Range(randPositionCol,randPositionCol+16));
+        /*if(j == 0){
             patch = picture(Range(picture.rows/2,picture.rows/2+HOG_WINDOW_ROW),Range(10,10+HOG_WINDOW_COL));
         } else if (j == 1){
             patch = picture(Range(10,10+HOG_WINDOW_ROW),Range(picture.cols/2,picture.cols/2+HOG_WINDOW_COL));
         } else{
             patch = picture(Range(picture.rows-(10+HOG_WINDOW_ROW),picture.rows-10),Range(picture.cols/2,picture.cols/2+HOG_WINDOW_COL));
-        }
+        }*/
         //cout << "Size patch: " << patch.size() << std::endl;
         std::vector<float> descriptorPicture;
         hog.compute(patch,descriptorPicture);

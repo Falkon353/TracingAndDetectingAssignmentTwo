@@ -24,7 +24,7 @@ public:
 	~randomForest();*/
 	void creat(int nrTrees, int CVFoolds, int maxCategories, int maxDepth, int minSampelCount);
 	void train(Mat features, Mat label, std::vector<int> vecLabels);
-	void predict(Mat descriptorPicture, std::vector<int> vecLabels, pair<int, int>& answers);
+	void predict(string picturePath, HOGDescriptor& hog, std::vector<int> vecLabels, pair<int, int>& answer);
 	void predictFromPath(HOGDescriptor& hog, string baseDir, std::vector<int> vecLabels, std::vector<std::vector<pair<int, int> > >& answers);
 	void evaluateBoxes(Mat& picture, HOGDescriptor& hog, std::vector<vector<int> > boxes, std::vector<int> vecLabels, std::vector<pair<vector<int>, pair<int, int> > >& boxPredictionPairs);
 	int getNrTrees(); 

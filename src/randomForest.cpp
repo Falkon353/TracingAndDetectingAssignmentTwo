@@ -22,6 +22,7 @@ void RandomForest::train(Mat features, Mat labels, std::vector<int> vecLabels){
 	int nrFeatursPerTree = nrTotalfeatures/10;
 	std::vector<int> usedFeaturs, globalUsedFeaturs;
 	int randFeatur, nrNewFeaturs;
+	cout << "featur size: " << features.size() << std::endl;
 	for(Ptr<ml::DTrees> dTree: randomForest){
 		//int nrFeatursPerTree = rand() % nrTotalfeatures;
 		int uniqFeaturNr = 0;
@@ -46,20 +47,40 @@ void RandomForest::train(Mat features, Mat labels, std::vector<int> vecLabels){
 			labelsSubset.push_back(labels(Range(randFeatur,randFeatur+1),Range::all()));
 			usedFeaturs.push_back(randFeatur);
 		}
-		//cout << "feturesSubset size: " << feturesSubset.size() << std::endl;
-		//cout << "labelsSubset size: " << labelsSubset.size() << std::endl;
+		/*cout << "feturesSubset size: " << feturesSubset.size() << std::endl;
+		cout << "labelsSubset size: " << labelsSubset.size() << std::endl;*/
 
 		usedFeaturs.clear();
 		//cout << "feturesSubset size: " << feturesSubset.size() << std::endl;
-		dTree-> train(ml::TrainData::create(feturesSubset,ml::ROW_SAMPLE, labelsSubset));
+		//cout << "labelsSubset: " << std::endl << " " << labelsSubset << std::endl;
+		//cout << "labelsSubsetType" << labelsSubset.type() << std::endl;
+		//dTree-> train(ml::TrainData::create(feturesSubset,ml::ROW_SAMPLE, labelsSubset));
+		cout << "feturesSubsettype: " << feturesSubset.type() << std::endl;
+		dTree -> train(feturesSubset,ml::ROW_SAMPLE,labelsSubset);
 	}
 }
-void RandomForest::predict(Mat descriptorPicture,std::vector<int> vecLabels, pair<int, int>& answer){
+void RandomForest::predict(string picturePath, HOGDescriptor& hog, std::vector<int> vecLabels, pair<int, int>& answer){
 	std::vector<int> answers;
 	for(Ptr<ml::DTrees> dTree: randomForest){
-		int answer = dTree -> predict(descriptorPicture);
-		//cout << "answer: " << answer << std::endl;
-		answers.push_back(answer);
+		vector<Mat> vectorDescriptorsPicture;
+		creatPicturDecriptor(vectorDescriptorsPicture,hog,picturePath);
+		vector<int> answersPatch;
+		for(Mat mDescriptorPicture: vectorDescriptorsPicture){
+			int answerPatch = dTree -> predict(mDescriptorPicture);
+			//cout << "answerPatch: " << answerPatch << std::endl;
+			answersPatch.push_back(answerPatch);
+		}
+		int mostVotedLabe = 0;
+		int votsMostVotedLabe = 0;
+		for(int label: vecLabels){
+			int labelVots = count (answersPatch.begin(),answersPatch.end(), label);
+			if(labelVots > votsMostVotedLabe){
+				votsMostVotedLabe = labelVots;
+				mostVotedLabe = label;
+			}
+		}
+		//cout << "mostVotedLabe: " << mostVotedLabe << std::endl;
+		answers.push_back(mostVotedLabe);
 	}
 	int mostVotedLabe = 0;
 	int votsMostVotedLabe = 0;
@@ -84,22 +105,25 @@ void RandomForest::predictFromPath(HOGDescriptor& hog, string baseDir, std::vect
 	for(std::vector<string> paths: pathToPictures){
 		std::vector<pair<int, int> > folderAnswers;
 		for(string pathToPicture: paths){
-			pair<int, int> picturAnswer;
+			pair<int, int> answer;
+			this->predict(pathToPicture,hog,vecLabels,answer),
+			folderAnswers.push_back(answer);
+			/*pair<int, int> picturAnswer;
 			vector<Mat> vectorDescriptorsPicture;
 			creatPicturDecriptor(vectorDescriptorsPicture,hog, pathToPicture);
 			for(Mat mDescriptorPicture: vectorDescriptorsPicture){
 				cout << "DescriptorPicture: " << mDescriptorPicture.size() << std::endl;
-	            this->predict(mDescriptorPicture,vecLabels,picturAnswer);
+	            this->predict(picturePath,hog,vecLabels,answer);
 	            //cout << "pathToPictures" << pathToPicture << std::endl;
 	            //cout << "answer: " << picturAnswer.first << " Prosent: " << picturAnswer.second << std::endl;
 	            folderAnswers.push_back(picturAnswer);
-			}
+			}*/
 		}
 		answers.push_back(folderAnswers);
 	}
 }
 
-void RandomForest::evaluateBoxes(Mat& picture, HOGDescriptor& hog, std::vector<vector<int> > boxes, std::vector<int> vecLabels, std::vector<pair<vector<int>, pair<int, int> > >& boxPredictionPairs){
+/*void RandomForest::evaluateBoxes(Mat& picture, HOGDescriptor& hog, std::vector<vector<int> > boxes, std::vector<int> vecLabels, std::vector<pair<vector<int>, pair<int, int> > >& boxPredictionPairs){
 	for(std::vector<int> boxCordinats: boxes){
         pair<int,int> answer;
         //HOGDescriptor hog(Size(box.cols,box.rows), Size(box.cols/2,box.rows/2), Size(box.cols/4,box.rows/4), Size(box.cols/2,box.cols/2),9);
@@ -119,7 +143,7 @@ void RandomForest::evaluateBoxes(Mat& picture, HOGDescriptor& hog, std::vector<v
         boxPredictionPair.second = answer;
         boxPredictionPairs.push_back(boxPredictionPair);
     }
-}
+}*/
 
 int RandomForest::getNrTrees(){
 	return randomForest.size();

@@ -49,6 +49,10 @@ dirent.h
 -
 string.h
 -
+time.h
+-
+algorithm
+-
 opencv2/core/core.hpp
 ../include/opencv2/core/core.hpp
 opencv2/highgui/highgui.hpp
