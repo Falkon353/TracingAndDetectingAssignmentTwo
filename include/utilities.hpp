@@ -23,7 +23,7 @@ using namespace cv;
 void reqursivelyFindJPG(string baseDir, std::vector< vector <string> >& pathToPictures);
 int createTrainingData(Mat& features, Mat& labels, std::vector< vector<string> > pathToPictures, std::vector<int>& vecLabels);
 int dTreePredict(HOGDescriptor& hog, ml::DTrees* dTree, std::vector<vector <string> > pathToPictures, std::vector<vector <int> >& answers);
-int creatPicturDecriptor(Mat& mDescriptorPicture, HOGDescriptor& hog, string picturePath);
+int creatPicturDecriptor(vector<Mat>& vectorDescriptorsPicture, HOGDescriptor& hog, string picturePath);
 void creatBoxesUsingSlidingWindow(int nrRows, int nrColums, int shiftRows, int shiftColums, Mat& picture, std::vector<vector<int> >& boxes);
 int agmentPicturesInPath(string baseDir);
 #endif

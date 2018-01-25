@@ -66,7 +66,7 @@ void RandomForest::predict(Mat descriptorPicture,std::vector<int> vecLabels, pai
 	int labelVots;
 	for(int label: vecLabels){
 		labelVots = count (answers.begin(), answers.end(), label);
-		cout << "label: " << label << " Vots: " << labelVots << std::endl;
+		//cout << "label: " << label << " Vots: " << labelVots << std::endl;
 		if(labelVots > votsMostVotedLabe){
 			mostVotedLabe = label;
 			votsMostVotedLabe = labelVots;
@@ -85,13 +85,15 @@ void RandomForest::predictFromPath(HOGDescriptor& hog, string baseDir, std::vect
 		std::vector<pair<int, int> > folderAnswers;
 		for(string pathToPicture: paths){
 			pair<int, int> picturAnswer;
-			Mat mDescriptorPicture;
-			creatPicturDecriptor(mDescriptorPicture,hog, pathToPicture);
-			cout << "DescriptorPicture: " << mDescriptorPicture.size() << std::endl;
-            this->predict(mDescriptorPicture,vecLabels,picturAnswer);
-            cout << "pathToPictures" << pathToPicture << std::endl;
-            cout << "answer: " << picturAnswer.first << " Prosent: " << picturAnswer.second << std::endl;
-            folderAnswers.push_back(picturAnswer);
+			vector<Mat> vectorDescriptorsPicture;
+			creatPicturDecriptor(vectorDescriptorsPicture,hog, pathToPicture);
+			for(Mat mDescriptorPicture: vectorDescriptorsPicture){
+				cout << "DescriptorPicture: " << mDescriptorPicture.size() << std::endl;
+	            this->predict(mDescriptorPicture,vecLabels,picturAnswer);
+	            //cout << "pathToPictures" << pathToPicture << std::endl;
+	            //cout << "answer: " << picturAnswer.first << " Prosent: " << picturAnswer.second << std::endl;
+	            folderAnswers.push_back(picturAnswer);
+			}
 		}
 		answers.push_back(folderAnswers);
 	}

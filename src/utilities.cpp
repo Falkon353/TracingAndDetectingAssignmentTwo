@@ -54,26 +54,17 @@ void reqursivelyFindJPG(string baseDir, std::vector< vector <string> >& pathToPi
 int createTrainingData(Mat& features, Mat& labels, std::vector< vector<string> > pathToPictures, std::vector<int>& vecLabels){
     int classCounter = 1;
     //HOGDescriptor hog(Size(128,96), Size(16,12), Size(8,6), Size(16,12),9);
-    HOGDescriptor hog(Size(PICTURE_COL,PICTURE_ROW), Size(BLOCK_COL,BLOCK_ROW), Size(BLOCK_STRID_COL,BLOCK_STRID_ROW), Size(CELL_COL,CELL_ROW),9);
+    HOGDescriptor hog(Size(HOG_WINDOW_COL,HOG_WINDOW_ROW), Size(BLOCK_COL,BLOCK_ROW), Size(BLOCK_STRID_COL,BLOCK_STRID_ROW), Size(CELL_COL,CELL_ROW),9);
     int i = 0;
     for(vector<string>& paths: pathToPictures){
-        for(string& picturPath: paths){
+        for(string& picturePath: paths){
             i++;
-            //cout << "Picture: " << picturPath << "classCounter: " << classCounter << std::endl;
-            Mat picture;
-            picture = imread(picturPath,CV_LOAD_IMAGE_COLOR);
-            //cout << "picture size: " << picture.size() << std::endl;
-            if(!picture.data){
-                cout << "Could not open or find the image" << std::endl;
-                return -1;
+            vector<Mat> vectorDescriptorsPicture;
+            creatPicturDecriptor(vectorDescriptorsPicture,hog,picturePath);
+            for(Mat mDescriptorPicture: vectorDescriptorsPicture){
+                features.push_back(mDescriptorPicture);
+                labels.push_back(classCounter);
             }
-            resize(picture, picture, Size(PICTURE_COL,PICTURE_ROW));
-            std::vector<float> descriptorPicture;
-            hog.compute(picture,descriptorPicture);
-            Mat mDescriptorPicture = Mat(1, descriptorPicture.size(), CV_32FC1);
-            memcpy(mDescriptorPicture.data, descriptorPicture.data(), descriptorPicture.size());
-            features.push_back(mDescriptorPicture);
-            labels.push_back(classCounter);
         }
 
         vecLabels.push_back({classCounter});
@@ -87,28 +78,43 @@ int dTreePredict(HOGDescriptor& hog, ml::DTrees* dTree, std::vector<vector <stri
     for(vector<string>& paths: pathToPictures){
         std::vector<int> folderAnswers;
         for(string& picturePath: paths){ 
-            Mat mDescriptorPicture;
-            creatPicturDecriptor(mDescriptorPicture,hog,picturePath);
-            int answer = dTree -> predict(mDescriptorPicture);
-            folderAnswers.push_back(answer);
+            vector<Mat> vectorDescriptorsPicture;
+            creatPicturDecriptor(vectorDescriptorsPicture,hog,picturePath);
+            int answer;
+            for(Mat mDescriptorPicture: vectorDescriptorsPicture){
+                answer = dTree -> predict(mDescriptorPicture);
+                folderAnswers.push_back(answer);
+            }
         }
         answers.push_back(folderAnswers);
     }
     return 0;
 }
 
-int creatPicturDecriptor(Mat& mDescriptorPicture, HOGDescriptor& hog, string picturePath){
+int creatPicturDecriptor(vector<Mat>& vectorDescriptorsPicture, HOGDescriptor& hog, string picturePath){
     Mat picture;
     picture = imread(picturePath,CV_LOAD_IMAGE_COLOR);
     if(!picture.data){
         cout << "Could not open or find the image" << std::endl;
         return -1;
     }
-    resize(picture, picture, Size(PICTURE_COL,PICTURE_ROW));
-    std::vector<float> descriptorPicture;
-    hog.compute(picture,descriptorPicture);
-    mDescriptorPicture = Mat(1, descriptorPicture.size(), CV_32FC1);
-    memcpy(mDescriptorPicture.data, descriptorPicture.data(), descriptorPicture.size());
+    //resize(picture, picture, Size(PICTURE_COL,PICTURE_ROW));
+    for(int j = 0; j < 3; j++){
+        Mat patch;
+        if(j == 0){
+            patch = picture(Range(picture.rows/2,picture.rows/2+HOG_WINDOW_ROW),Range(10,10+HOG_WINDOW_COL));
+        } else if (j == 1){
+            patch = picture(Range(10,10+HOG_WINDOW_ROW),Range(picture.cols/2,picture.cols/2+HOG_WINDOW_COL));
+        } else{
+            patch = picture(Range(picture.rows-(10+HOG_WINDOW_ROW),picture.rows-10),Range(picture.cols/2,picture.cols/2+HOG_WINDOW_COL));
+        }
+        //cout << "Size patch: " << patch.size() << std::endl;
+        std::vector<float> descriptorPicture;
+        hog.compute(patch,descriptorPicture);
+        Mat mDescriptorPicture = Mat(1, descriptorPicture.size(), CV_32FC1);
+        memcpy(mDescriptorPicture.data, descriptorPicture.data(), descriptorPicture.size());
+        vectorDescriptorsPicture.push_back(mDescriptorPicture);
+    }
     return 0;
 }
 
