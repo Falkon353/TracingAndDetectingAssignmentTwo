@@ -41,15 +41,6 @@ int main(){
 	namedWindow("Flipe windo", CV_WINDOW_AUTOSIZE);
 	imshow("Flipe windo", flip);
 
-	//try{
-	//	imwrite("test.jpg", gray);
-	//}
-	//catch (runtime_error& ex){
-	//	cout << "Was not able to store image" << std::endl;
-	//	return 1;
-	//}
-
-	//cout << "Was able to stor image in test.jpg" << std::endl;
 	// init descriptors and HOG
 	std::vector<float> descriptorsImage;
 	std::vector<float> descriptorsGray;
@@ -57,17 +48,17 @@ int main(){
 	std::vector<float> descriptorsFlip;
 	HOGDescriptor hog(Size(image.size().width,image.size().height), Size(16,12), Size(8,6), Size(16,12),9);
 	//calculate and show HOG descriptors
-	hog.compute(image,descriptorsImage);
-	//visualizeHOG(image,descriptorsImage,hog,5);
+	/*hog.compute(image,descriptorsImage);
+	visualizeHOG(image,descriptorsImage,hog,5);*/
 
 	hog.compute(gray,descriptorsGray);
 	visualizeHOG(gray,descriptorsGray,hog,5);
 
-	hog.compute(rotate,descriptorsRotate);
-	visualizeHOG(rotate,descriptorsRotate,hog,5);
+	/*hog.compute(rotate,descriptorsRotate);
+	visualizeHOG(rotate,descriptorsRotate,hog,5);*/
 
-	hog.compute(flip,descriptorsFlip);
-	visualizeHOG(flip,descriptorsFlip,hog,5);
+	/*hog.compute(flip,descriptorsFlip);
+	visualizeHOG(flip,descriptorsFlip,hog,5);*/
 
 	waitKey(0);
 	return 0;
